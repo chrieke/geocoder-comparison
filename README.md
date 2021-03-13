@@ -7,5 +7,5 @@ Inspired by [Gisgraphy result comparison](https://www.gisgraphy.com/compare/).
 <br>
 
 <p align="center">
-   <img src="demo.gif" width="70%">
+   <img src="demo.gif" width="90%">
 </p>
