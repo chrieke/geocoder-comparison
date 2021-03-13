@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_folium import folium_static
 import folium
 import geocoder
-from shapely.geometry import Point, Polygon
+from shapely.geometry import Point, MultiPoint
 
 from map import folium_base_map
 
@@ -49,23 +49,25 @@ for col, name, result in zip(api_cols, api_names, api_results):
 
 colors = ["#ff0000", "#fffc00", "#40ff00"]
 if points:
-    centroid = Polygon([[p.x, p.y] for p in points if p is not None]).centroid
+    if all([p is None for p in points]):
+        st.stop()
+    centroid = MultiPoint([p for p in points if p is not None]).centroid
 
     m = folium_base_map(lat=centroid.x, lon=centroid.y, zoom_start=15)
 
     for name, point, color in zip(api_names, points, colors):
-        folium.CircleMarker(
-            location=(point.x, point.y),
-            radius=12,
-            popup=name,
-            color=color,
-            fill=True,
-            fill_color=color,
-        ).add_to(m)
+        if point is not None:
+            folium.CircleMarker(
+                location=(point.x, point.y),
+                radius=12,
+                popup=name,
+                color=color,
+                fill=True,
+                fill_color=color,
+            ).add_to(m)
 
 st.text("")
 st.text("")
 st.text("")
-
 
 folium_static(m)

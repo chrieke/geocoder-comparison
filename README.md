@@ -1,4 +1,4 @@
-# geocoder-comparison - work in progress
+# geocoder-comparison
 
 Live at https://share.streamlit.io/chrieke/geocoder-comparison/main/app/app.py
 
