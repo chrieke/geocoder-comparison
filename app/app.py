@@ -11,11 +11,13 @@ st.title("Geocoder comparison")
 st.text("")
 
 st.write(
-    "Enter a place, street or address and see if the results of differenct geocoders give different results!"
+    "Enter a place, street or address and see if the results of differenct geocoders give similar results!"
 )
 st.text("")
 
 address_input = st.text_input("Enter address and press Enter", "Pariser Platz, Berlin")
+if not address_input:
+    st.stop()
 st.text("")
 st.text("")
 
