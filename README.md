@@ -1,12 +1,11 @@
 # geocoder-comparison
 
-Live at https://share.streamlit.io/chrieke/geocoder-comparison/main/app/app.py
+A comparison of multiple geocoders - build with streamlit. [Live >here<](https://share.streamlit.io/chrieke/geocoder-comparison/main/app/app.py).
 
-A comparison of multiple geocoders as a streamlit app, inspired by [Gisgraphy result comparison](https://www.gisgraphy.com/compare/)
+Inspired by [Gisgraphy result comparison](https://www.gisgraphy.com/compare/).
 
+<br>
 
-Run locally via
-
-```
-streamlit run app/app.py
-```
+<p align="center">
+   <img src="demo.gif" width="70%">
+</p>
