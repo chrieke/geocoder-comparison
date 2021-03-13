@@ -15,15 +15,6 @@ def folium_base_map(
         mapfigure
     )
 
-    # tiles = (
-    #     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery"
-    #     "/MapServer/tile/{z}/{y}/{x}.png"
-    # )
-    # attr = (
-    #     "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, "
-    #     "AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the "
-    #     "GIS User Community"
-    # )
     folium.TileLayer(
         tiles="OpenStreetMap", attr="OpenStreetMap", name="Satellite - ESRI"
     ).add_to(m)
@@ -52,19 +43,3 @@ def folium_base_map(
         # If adding additional layers outside of the folium base map function, don't
         # use this one here. Causes an empty map.
     return m
-
-
-VECTOR_STYLE = {
-    "fillColor": "#5288c4",
-    "color": "blue",
-    "weight": 2.5,
-    "dashArray": "5, 5",
-}
-
-
-HIGHLIGHT_STYLE = {
-    "fillColor": "#ffaf00",
-    "color": "red",
-    "weight": 3.5,
-    "dashArray": "5, 5",
-}
